@@ -13,12 +13,12 @@ $headers .= 'Content-Transfer-Encoding: base64' . "\r\n";
 $headers = "From: " . $from . "\r\n";
 $headers .= "Reply-To: " . $from . "\r\n";
 
-$mail_status = mail($to, $subject, $message, $headers);
+$mail_status = mail($to, $subject, $txt, $headers);
 
 if($mail_status) {
-    header("Location: index.html?mail_status=sent");
+    header("Location: /form-contact/index.html?mail_status=sent");
 } else {
-    header("Location: index.html?mail_status=error");
+    header("Location: /form-contact/index.html?mail_status=error");
 }
 
 ?>
